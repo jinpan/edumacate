@@ -3,16 +3,8 @@ from django.db import models
 
 class ContentType(models.Model):
 
-    CONTENT_TYPES = (
-        ('', 'Web Page'),
-        ('App', 'Application'),
-        ('Blog', 'Blog'),
-        ('Mot', 'Motivational'),
-        ('VL', 'Video Lecture'),
-    )
-    name = models.CharField(max_length=10,
-                            choices=CONTENT_TYPES,
-                            default='')
+    name = models.CharField(max_length=100,
+                            default='Web Page')
 
 
 class Resource(models.Model):
@@ -29,5 +21,5 @@ class SubjectTag(models.Model):
     parent = models.ForeignKey('SubjectTag', blank=True, null=True)
     name = models.CharField(max_length=100)
 
-    thumbnail = models.ImageField(upload_to='subject_thumbnails/')
+    thumbnail = models.ImageField(upload_to='models/subject_thumbnails/')
 

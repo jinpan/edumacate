@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
             name='ContentType',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('name', models.CharField(default=b'', max_length=10, choices=[(b'', b'Web Page'), (b'App', b'Application'), (b'Blog', b'Blog'), (b'Mot', b'Motivational'), (b'VL', b'Video Lecture')])),
+                ('name', models.CharField(default=b'Web Page', max_length=100)),
             ],
             options={
             },
@@ -37,7 +37,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=100)),
-                ('thumbnail', models.ImageField(upload_to=b'subject_thumbnails/')),
+                ('thumbnail', models.ImageField(upload_to=b'models/subject_thumbnails/')),
                 ('parent', models.ForeignKey(blank=True, to='resource_index.SubjectTag', null=True)),
             ],
             options={
