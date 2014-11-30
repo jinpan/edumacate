@@ -54,5 +54,7 @@ docs/_build/
 target/
 
 *.sw[a-p]
+.DS_Store
+db.sqlite3
 website/ENV
 
