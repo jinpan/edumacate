@@ -11,8 +11,14 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', 'resource_index.views.home')
-) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r'^$', 'resource_index.views.home'),
+    url(r'^accounts/', include('allauth.urls')),
+
+)
+urlpatterns += static(settings.MEDIA_URL,
+                      document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL,
+                      document_root=settings.STATIC_ROOT)
 
 
 
